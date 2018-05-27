@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/startFragment">
+
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="example.inc.trence.tafa.StartFragment"
+        android:label="fragment_start"
+        tools:layout="@layout/fragment_start" >
+        <argument
+            android:name="post"
+            android:defaultValue="http://jsonplaceholder.typicode.com/posts"
+            app:type="string" />
+        <argument
+            android:name="users"
+            android:defaultValue="http://jsonplaceholder.typicode.com/users"
+            app:type="string" />
+
+        <action
+            android:id="@+id/toDetail"
+            app:destination="@id/detailFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="example.inc.trence.tafa.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" >
+        <argument
+            android:name="comments"
+            android:defaultValue="http://jsonplaceholder.typicode.com/comments"
+            app:type="string" />
+        <argument
+            android:name="detailBundle"
+            app:type="reference" />
+    </fragment>
+
+</navigation>
